@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  db-fatura:
+    image: 'postgres:9.6-alpine'
+    volumes:
+      - db-fatura-volume:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: fatura
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fatura
+      POSTGRES_HOST: db-fatura
+
+volumes:
+  db-fatura-volume:
